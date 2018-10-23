@@ -1,5 +1,5 @@
 #  本项目用于ts重写parcel项目
-
+#  yarn install  用cnpm可能会有ts重复声明的问题
 #  以下为构建中遇到的问题记录
 
 # 1.create-react-app脚手架自定义配置webpack的方法

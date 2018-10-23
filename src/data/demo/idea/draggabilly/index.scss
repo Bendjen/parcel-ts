@@ -1,0 +1,91 @@
+:local {
+    .container{
+        background: #a27373;
+		width: 100%;
+		padding: 20px;
+	}
+	.contentContainer{
+		margin-left: 20px;
+		background: #a78787;
+		width: 800px;
+		height: 400px;
+		position: relative;
+		.textItem{
+			position: absolute;
+			left: 0;
+			top: 0;
+			display: inline-block;
+			background: #fff;
+			padding: 5px;
+			margin-bottom: 5px;
+			margin-right: 5px;
+			border: 1px solid #ddd;
+			cursor: move;
+			user-select:none;
+			text-align: center;
+			content{
+				background: #ddd;
+				padding: 5px;
+			}
+		}
+		.tableItem{
+			cursor: move;
+			width: 100%;
+			position: absolute;
+			left: 0;
+			top: 0;
+			display:block;
+			padding: 20px;
+			background: #ddd;
+			text-align: center;	
+			p{
+				margin-bottom: 0;
+			}
+		}
+		.qrcodeItem{
+			cursor: move;
+			display: inline-block;
+			width: 100%;
+			position: absolute;
+			left: 0;
+			top: 0;
+			padding: 5px;
+			background: #fff;
+			width: 50px;
+			height: 50px;
+			content{
+				display: inline-block;
+				background: #ddd;	
+				width: 100%;
+				height: 100%;	
+			}
+		}
+	}
+    .toolContainer{
+		padding: 10px;
+		float: left;
+		user-select:none;
+		box-sizing: border-box;
+		border:  1px dashed #999 ;
+		border-bottom: none;
+		width: 150px;
+		z-index: 2;
+		.toolItem{
+			display: inline-block;
+			background: #fff;
+			padding: 10px;
+			margin-bottom: 5px;
+			margin-right: 5px;
+			border: 1px solid #ddd;
+			cursor: move;
+			user-select:none;
+			text-align: center;
+		}
+	}
+}
+
+:global{
+	.ant-popover-inner-content{
+		min-width: 400px;
+	}
+}

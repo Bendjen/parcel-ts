@@ -1,8 +1,7 @@
-import * as React from 'react'
+import React from "react";
 import { Link } from "react-router-dom";
-import Search from "../search";
+// import Search from "../search";
 import style from "./index.scss";
-
 
 interface INavItem {
 	name: string,
@@ -10,15 +9,14 @@ interface INavItem {
 }
 
 interface IState {
-	navList: INavItem[],
-	curIndex: number
+	curIndex: number,
+	navList: INavItem[]
 }
 
 class Nav extends React.Component<{}, IState> {
-
 	constructor(props: {}) {
 		super(props);
-		this.handleClick = this.handleClick.bind(this);
+
 		this.state = {
 			curIndex: 3,
 			navList: [
@@ -27,10 +25,11 @@ class Nav extends React.Component<{}, IState> {
 				{ name: "Idea", link: "/home/idea" },
 				{ name: "Mark", link: "/mark" },
 				{ name: "About", link: "/about" }
-			]
+			],
 		};
-	}
 
+		this.handleClick = this.handleClick.bind(this)
+	}
 	public handleClick(e: any) {
 		this.setState({
 			curIndex: e.target.getAttribute("data-index")
@@ -58,7 +57,7 @@ class Nav extends React.Component<{}, IState> {
 						</Link>
 					);
 				})}
-				<Search />
+				{/* <Search /> */}
 			</nav>
 		);
 	}

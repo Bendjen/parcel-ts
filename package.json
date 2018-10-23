@@ -1,29 +1,33 @@
 {
-  "name": "parcel-ts",
+  "name": "antd-demo-ts",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "antd": "^3.10.2",
+    "flex.css": "^1.1.7",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
+    "react-loadable": "^5.5.0",
     "react-router-dom": "^4.3.1",
     "react-scripts-ts": "3.1.0"
   },
   "scripts": {
-    "start": "node scripts/customized-config start",
-    "build": "node scripts/customized-config build",
-    "test": "node scripts/customized-config test --env=jsdom",
+    "start": "react-app-rewired start --scripts-version react-scripts-ts",
+    "build": "react-app-rewired build --scripts-version react-scripts-ts",
+    "test": "react-app-rewired test --env=jsdom --scripts-version react-scripts-ts",
     "eject": "react-scripts-ts eject"
   },
   "devDependencies": {
-    "@types/jest": "^23.3.5",
+    "@types/jest": "^23.3.7",
     "@types/node": "^10.12.0",
     "@types/react": "^16.4.18",
     "@types/react-dom": "^16.0.9",
+    "@types/react-loadable": "^5.4.1",
     "@types/react-router-dom": "^4.3.1",
     "node-sass": "^4.9.4",
-    "proxyquire": "^2.1.0",
-    "rewire": "^4.0.1",
+    "react-app-rewired": "^1.6.2",
     "sass-loader": "^7.1.0",
+    "ts-import-plugin": "^1.5.5",
     "typescript": "^3.1.3"
   }
 }

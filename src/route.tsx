@@ -1,22 +1,37 @@
 import * as React from 'react';
-import { HashRouter } from "react-router-dom";
-// import { HashRouter, Route, Switch } from "react-router-dom";
-import { Body, Header } from "./layout";
+import Loadable from 'react-loadable';
+import { HashRouter, Route, Switch } from "react-router-dom";
+import { Body, Header } from "./layout/index";
 
-// import About from "./page/about";
-// import Detail from "./page/detail";
-// import Home from "./page/home";
-// import Mark from "./page/mark";
+const Loading = () => <div>Loading...</div>;
+
+const About = Loadable({
+	loader: () => import('./page/about'),
+	loading: Loading,
+})
+const Detail = Loadable({
+	loader: () => import('./page/detail'),
+	loading: Loading,
+})
+const Home = Loadable({
+	loader: () => import('./page/home'),
+	loading: Loading,
+})
+const Mark = Loadable({
+	loader: () => import('./page/mark'),
+	loading: Loading,
+})
+
 
 const Main = () => (
 	<Body>
-		{/* <Switch>
+		<Switch>
 			<Route exact={true} path="/" component={Mark} />
 			<Route exact={true} path="/home/:type" component={Home} />
 			<Route exact={true} path="/detail/:type/:id" component={Detail} />
 			<Route exact={true} path="/mark" component={Mark} />
 			<Route exact={true} path="/about" component={About} />
-		</Switch> */}
+		</Switch>
 	</Body>
 );
 
