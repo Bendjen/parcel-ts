@@ -1,0 +1,28 @@
+:local {
+  .header {
+    position: fixed;
+    top: 0;
+    background: #fff;
+    height: 78px;
+    width: 100%;
+    z-index: 1000;
+  }
+  .container {
+    width: 960px;
+    margin: 0 auto;
+    span {
+      font-size: 26px;
+      color: #2c3e50;
+      font-family: "Dosis", "Source Sans Pro", "Helvetica Neue", Arial,
+        sans-serif;
+      font-weight: 500;
+      display: inline-block;
+      margin-left: 10px;
+      user-select:none;
+    }
+    i {
+      color: #c6a76d;
+      font-size: 45px;
+    }
+  }
+}
