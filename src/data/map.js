@@ -1,9 +1,9 @@
-import demoList from "../data/demo";
-import textList from "../data/text";
-import menuList from "../data//menu";
+// import demoList from "../data/demo";
+// import textList from "../data/text";
+import menuList from "../data/menu";
 
-const map = { demoList, textList, menuList };
+// const map = {  textList, menuList };
 
-export default map;
+// export default map;
 
-export { demoList, textList, menuList };
+export {   menuList };

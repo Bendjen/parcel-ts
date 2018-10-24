@@ -19,6 +19,5 @@ export default {
   reactiveProgramming : require('./reactiveProgramming').default,
   privateVariable : require('./privateVariable').default,
   bidirectionalBindings : require('./bidirectionalBindings').default,
-  bidirectionalBindings : require('./bidirectionalBindings').default,
   excelExport : require('./excelExport').default,
 }

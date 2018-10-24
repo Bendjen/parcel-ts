@@ -27,12 +27,10 @@ class Nav extends React.Component<{}, IState> {
 				{ name: "About", link: "/about" }
 			],
 		};
-
-		this.handleClick = this.handleClick.bind(this)
 	}
-	public handleClick(e: any) {
+	public handleClick(index: number) {
 		this.setState({
-			curIndex: e.target.getAttribute("data-index")
+			curIndex: index
 		});
 	}
 	public render() {
@@ -43,11 +41,10 @@ class Nav extends React.Component<{}, IState> {
 						<Link
 							to={item.link}
 							key={index}
-							onClick={this.handleClick}
+							onClick={this.handleClick.bind(this, index)}
 							className={style.item}
 						>
 							<span
-								data-index={index}
 								className={
 									index === this.state.curIndex ? style.active : style.disActive
 								}

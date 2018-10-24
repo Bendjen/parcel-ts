@@ -4,10 +4,11 @@
     "baseUrl": ".",
     "outDir": "build/dist",
     "module": "esnext",
-    "target": "es6",
+    "target": "es5",
     "lib": [
+      "es2017",
       "es6",
-      "dom"
+      "dom",
     ],
     "sourceMap": true,
     "allowJs": true,

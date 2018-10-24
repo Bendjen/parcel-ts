@@ -1,5 +1,6 @@
 const tsImportPluginFactory = require('ts-import-plugin')
 const { getLoader } = require("react-app-rewired");
+const path = require('path');
 
 module.exports = function override(config, env) {
 
@@ -29,5 +30,13 @@ module.exports = function override(config, env) {
     use: ["style-loader", "css-loader", "sass-loader"]
   });
 
+  // 增加tsx作为默认值
+  const resolve = config.resolve;
+  resolve.extensions = [...resolve.extensions, '.tsx']
+
+  // 增加别名
+  resolve.alias['@'] = path.resolve(__dirname, 'src')
+
+  console.log(config.resolve)
   return config;
 }
