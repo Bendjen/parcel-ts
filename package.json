@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "antd": "^3.10.2",
+    "file-saver": "^2.0.0-rc.4",
     "flex.css": "^1.1.7",
     "rc-queue-anim": "^1.6.6",
     "react": "^16.5.2",

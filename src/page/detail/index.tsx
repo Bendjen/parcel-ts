@@ -40,16 +40,17 @@ class Detail extends React.Component<{ match: any }> {
   }
 
   public render() {
-    // const routeParams = this.props.match.params;
-    const param = 'detail'
-    import('./text').then((page) => {
-      // tslint:disable-next-line:no-console
-      console.log(page)
-    })
+    const projectId = this.props.match.params.id;
+    // tslint:disable-next-line:no-console
+    // console.log(projectId)
+    // import(`../../project/${projectId}`).then((page) => {
+    //   // tslint:disable-next-line:no-console
+    //   console.log(page)
+    // })
 
     Demo = Loadable({
       // loader: () => import(`../../demo/${param}`),
-      loader: () => import(`../../demo/${param}`),
+      loader: () => import(`../../project/${projectId}/demo`),
       loading: Loading,
     })
     return (
