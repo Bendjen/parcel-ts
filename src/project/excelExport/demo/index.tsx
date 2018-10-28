@@ -7,6 +7,7 @@ import style from "./index.scss";
 class ExcelExport extends React.Component<{}, IState> {
   constructor(props: {}) {
     super(props);
+    this.export = this.export.bind(this);
     this.state = {
       columns: [
         {
@@ -44,13 +45,6 @@ class ExcelExport extends React.Component<{}, IState> {
       ]
     };
   }
-  public export() {
-    const thead = this.state.columns.map((item: IColumnsItem) => item.title);
-    const tbody = this.state.columns.map((item: IColumnsItem) => item.dataIndex);
-    const tableData = this.state.data;
-    const fileName = "导出表格";
-    csvExport(thead, tbody, tableData, fileName);
-  }
   public render() {
     return (
       <div className={style.container}>
@@ -69,6 +63,13 @@ class ExcelExport extends React.Component<{}, IState> {
         </Button>
       </div>
     );
+  }
+  private export() {
+    const thead = this.state.columns.map((item: IColumnsItem) => item.title);
+    const tbody = this.state.columns.map((item: IColumnsItem) => item.dataIndex);
+    const tableData = this.state.data;
+    const fileName = "导出表格";
+    csvExport(thead, tbody, tableData, fileName);
   }
 }
 
