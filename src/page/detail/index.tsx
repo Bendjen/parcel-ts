@@ -9,6 +9,8 @@ import Loadable from "react-loadable";
 import menu from "../../menu";
 import style from "./index.scss";
 
+import demoErector from "../../components/demoErector";
+import textErector from "../../components/textErector";
 
 const Loading = () => <div>Loading...</div>;
 
@@ -17,27 +19,29 @@ class Detail extends React.Component<any, {}> {
     super(props);
   }
 
-
   public render() {
     const { id, type } = this.props.match.params;
     const title = menu[type][id].title;
     const dependencies = menu[type][id].dependencies || [];
     const dependenciesText = (dependencies || []).join("、");
     const TextModule = Loadable({
-      loader: () => import(`../../project/${id}`).then(module => module.textModule),
+      loader: () =>
+        import(`../../project/${id}/text`).then(module =>
+          textErector(module.default)
+        ),
       loading: Loading
     });
     const DemoModule = Loadable({
-      loader: () => import(`../../project/${id}`).then(module => module.demoModule),
+      loader: () =>
+        import(`../../project/${id}/demo`).then(module =>
+          demoErector(module.default)
+        ),
       loading: Loading
     });
 
     return (
       <div className={style.container}>
-        <QueueAnim
-          type={"right"}
-          ease={"easeInOutQuart"}
-        >
+        <QueueAnim type={"right"} ease={"easeInOutQuart"}>
           <Badge
             className={style.themeName}
             key="title"
@@ -46,8 +50,8 @@ class Detail extends React.Component<any, {}> {
           >
             {title}
           </Badge>
-          <DemoModule key="demo"/>
-          <TextModule key="text"/>
+          <DemoModule key="demo" />
+          <TextModule key="text" />
         </QueueAnim>
       </div>
     );
