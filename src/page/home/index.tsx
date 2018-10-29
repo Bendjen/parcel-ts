@@ -1,4 +1,3 @@
-
 import QueueAnim from "rc-queue-anim";
 import React from "react";
 import { Link } from "react-router-dom";
@@ -38,14 +37,9 @@ class Home extends React.Component<{ match: any }> {
     }
     return (
       <div className={style.container}>
-        <QueueAnim
-          type={"bottom"}
-          ease={"easeInOutQuart"}
-          data-flex="main:justify"
-        >
+        <QueueAnim type="bottom" ease="easeInOutQuart" data-flex="main:justify">
           {cols.map((item: any, index: any) => (
             <ul className={style.list} key={index}>
-
               {item.map((son: any) => (
                 <li key={son.id}>
                   <Link
@@ -58,7 +52,6 @@ class Home extends React.Component<{ match: any }> {
                   </Link>
                 </li>
               ))}
-
             </ul>
           ))}
         </QueueAnim>

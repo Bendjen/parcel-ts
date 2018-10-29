@@ -2,32 +2,33 @@
   .container {
     width: 100%;
   }
-  .themeName {
+  .title {
     margin-top: 40px;
     font-size: 40px;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     height: 50px;
     line-height: 40px;
   }
-  .title {
-    padding: 44px 0 31px 0;
-    font-size: 25px;
-    color: #333333;
-    line-height: 25px;
-    height: 25px;
-    overflow: hidden;
-  }
   .content {
     border-radius: 2px;
     background: #fff;
     padding: 20px;
-    h3{
+    padding-left: 40px;
+    i {
+      font-size: 24px;
+    }
+    &>div {
       font-size: 18px;
-      margin-bottom: 20px;
-      &::before{
-        content:'# '
-      }
+      padding: 10px 0;
+    }
+    span {
+      margin-left: 30px;
+      font-size: 18px;
+    }
+    ol {
+      position: relative;
+      top: -27px;
+      padding-left: 110px;
     }
   }
-
 }

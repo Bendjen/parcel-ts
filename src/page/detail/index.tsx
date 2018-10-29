@@ -43,7 +43,7 @@ class Detail extends React.Component<any, {}> {
 
     return (
       <div className={style.container}>
-        <QueueAnim type={"right"} ease={"easeInOutQuart"}>
+        <QueueAnim type="right" ease="easeInOutQuart">
           <Badge
             className={style.themeName}
             key="title"
