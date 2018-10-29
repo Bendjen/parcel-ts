@@ -1,0 +1,34 @@
+:local{
+  .loadingIcon{
+    font-size: 40px;
+    color: rgb(197, 200, 198);
+  }
+  .loadingText{
+    font-size: 14px;
+    padding-top: 30px;
+    padding-left: 20px; 
+    color: rgb(197, 200, 198);
+  }
+  .title {
+    padding: 44px 0 31px 0;
+    font-size: 25px;
+    color: #333333;
+    line-height: 25px;
+    height: 25px;
+    overflow: hidden;
+  }
+  .content {
+    border-radius: 2px;
+    background: rgb(29, 31, 33);
+    padding: 100px;
+    margin-bottom: 100px;
+    h3{
+      font-size: 18px;
+      margin-bottom: 20px;
+      &::before{
+        content:'# '
+      }
+    }
+  }
+
+}

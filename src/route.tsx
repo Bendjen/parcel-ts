@@ -1,9 +1,16 @@
+import { Icon, Spin } from 'antd';
 import * as React from 'react';
 import Loadable from 'react-loadable';
 import { HashRouter, Route, Switch } from "react-router-dom";
 import { Body, Header } from "./layout/index";
 
-const Loading = () => <div>Loading...</div>;
+const Loading = () => (
+	<div style={{ width: '100%', height: 600, marginTop: 60, backgroundColor: 'hsla(0,0%,100%,.9)' }} data-flex='dir:top main:center cross:center'>
+		<Spin indicator={<Icon type="loading" style={{ fontSize: 80, color: '#c9c9c9' }} spin={true} />} />
+	</div>
+)
+
+	;
 
 const About = Loadable({
 	loader: () => import('./page/about'),

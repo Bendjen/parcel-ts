@@ -12,7 +12,9 @@ import style from "./index.scss";
 import demoErector from "../../components/demoErector";
 import textErector from "../../components/textErector";
 
-const Loading = () => <div>Loading...</div>;
+import DemoLoading from "../../components/demoLoading"
+import TextLoading from "../../components/textLoading"
+
 
 class Detail extends React.Component<any, {}> {
   constructor(props: any) {
@@ -29,14 +31,14 @@ class Detail extends React.Component<any, {}> {
         import(`../../project/${id}/text`).then(module =>
           textErector(module.default)
         ),
-      loading: Loading
+      loading: TextLoading
     });
     const DemoModule = Loadable({
       loader: () =>
         import(`../../project/${id}/demo`).then(module =>
           demoErector(module.default)
         ),
-      loading: Loading
+      loading: DemoLoading
     });
 
     return (

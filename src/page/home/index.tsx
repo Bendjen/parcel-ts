@@ -1,7 +1,8 @@
 
+import QueueAnim from "rc-queue-anim";
 import React from "react";
 import { Link } from "react-router-dom";
-import menu  from "../../menu";
+import menu from "../../menu";
 import style from "./index.scss";
 
 // tslint:disable-next-line:no-console
@@ -17,7 +18,7 @@ class Home extends React.Component<{ match: any }> {
     const list = Object.values(menu[type] || {});
     const average = Math.floor(list.length / 3);
     const remainder = list.length % 3;
-    const cols:any = [[], [], []];
+    const cols: any = [[], [], []];
     switch (remainder) {
       case 1:
         cols[0] = list.slice(0, average + 1);
@@ -36,28 +37,31 @@ class Home extends React.Component<{ match: any }> {
         break;
     }
     return (
-      <div className={style.container} data-flex="main:justify">
-        {cols.map((item:any, index:any) => (
-          <ul className={style.list} key={index}>
-            {/* <QueueAnim
-			  type={["bottom", "top"]}
-			  ease={["easeInQuart"]}
-			> */}
-            {item.map((son: any) => (
-              <li key={son.id}>
-                <Link
-                  to={`/detail/${type}/${son.id}`}
-                  data-flex="dir:top main:center cross:center"
-                >
-                  {/* <img src={"./dist/" + son.img} /> */}
-                  <img src={son.img} />
-                  <span>{son.title}</span>
-                </Link>
-              </li>
-            ))}
-            {/* </QueueAnim> */}
-          </ul>
-        ))}
+      <div className={style.container}>
+        <QueueAnim
+          type={"bottom"}
+          ease={"easeInOutQuart"}
+          data-flex="main:justify"
+        >
+          {cols.map((item: any, index: any) => (
+            <ul className={style.list} key={index}>
+
+              {item.map((son: any) => (
+                <li key={son.id}>
+                  <Link
+                    to={`/detail/${type}/${son.id}`}
+                    data-flex="dir:top main:center cross:center"
+                  >
+                    {/* <img src={"./dist/" + son.img} /> */}
+                    <img src={son.img} />
+                    <span>{son.title}</span>
+                  </Link>
+                </li>
+              ))}
+
+            </ul>
+          ))}
+        </QueueAnim>
       </div>
     );
   }
