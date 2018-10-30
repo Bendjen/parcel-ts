@@ -1,4 +1,5 @@
 #  本项目用于ts重写parcel项目
+   https://bendjen.github.io/parcel-ts/
 ##  npm install  用cnpm可能会有ts重复声明的问题
 #  以下为构建中遇到的问题记录
 
