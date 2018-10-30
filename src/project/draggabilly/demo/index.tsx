@@ -119,7 +119,7 @@ class DraggabillyComponent extends React.Component<{}, any> {
 											item.type === 'text' ?
 												<div>
 													<span>{item.title}：</span>
-													<p>{item.content || '<-- 文本内容 -->'}</p>
+													<span className={style.textContent} >{item.content || '<-- 文本内容 -->'}</span>
 												</div>
 												: null
 										}

@@ -23,9 +23,10 @@
 			cursor: move;
 			user-select:none;
 			text-align: center;
-			p{
+			.textContent{
 				background: #ddd;
-				padding: 5px;
+                padding: 5px;
+                margin-bottom: 0;
 			}
 		}
 		.tableItem{
@@ -38,7 +39,7 @@
 			padding: 20px;
 			background: #ddd;
 			text-align: center;	
-			p{
+			.textContent{
 				margin-bottom: 0;
 			}
 		}
@@ -53,7 +54,7 @@
 			background: #fff;
 			width: 50px;
 			height: 50px;
-			content{
+			.textContent{
 				display: inline-block;
 				background: #ddd;	
 				width: 100%;

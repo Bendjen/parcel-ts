@@ -1,7 +1,7 @@
 import * as React from "react";
 import style from "./index.scss";
 
-class UnNameing extends React.Component {
+class AnimationStep extends React.Component {
   constructor(props: {}) {
     super(props);
     this.state = {};
@@ -11,7 +11,7 @@ class UnNameing extends React.Component {
       <div className={style.container}>
         <p className={style.title}>素材图片：</p>
         <div className={style.imgScroll}>
-          <img src="/img/assets/zan.png" />
+          <img src="img/assets/zan.png" />
         </div>
         <p className={style.title}>动画效果：</p>
         <div className="zanAnimation" />
@@ -20,4 +20,4 @@ class UnNameing extends React.Component {
   }
 }
 
-export default UnNameing;
+export default AnimationStep;
