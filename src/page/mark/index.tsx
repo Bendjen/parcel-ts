@@ -91,6 +91,24 @@ class About extends React.Component<{}, IState> {
           ]
         },
         {
+          type: "TypeScript",
+          title: "TypeScript",
+          articles: [
+            {
+              title: "vue + typescript 新项目起手式",
+              url: "https://segmentfault.com/a/1190000011744210#articleHeader12"
+            },
+            {
+              title: "vue + typescript 进阶篇",
+              url: "https://segmentfault.com/a/1190000011878086"
+            },
+            {
+              title: "react + typescript  新项目起手式",
+              url: "https://ant.design/docs/react/use-in-typescript-cn"
+            }
+          ]
+        },
+        {
           type: "developer",
           title: "作为开发者",
           articles: [
