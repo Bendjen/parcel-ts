@@ -1,0 +1,35 @@
+:local {
+  .container {
+    i {
+      color: #2c3e50 !important;
+      font-size: 18px !important;
+      position: relative;
+      left: 28px;
+      z-index: 1;
+    }
+  }
+  .search {
+    width: 160px;
+    font-size: 14px;
+    text-indent: 14px !important;
+    border-radius: 30% !important;
+  }
+}
+
+:global {
+  .ant-select-selection__placeholder,
+  .ant-select-search__field__placeholder {
+    left: 14px !important;
+  }
+  .ant-select-combobox .ant-select-search__field {
+    width: 80% !important;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 10px;
+  }
+  .ant-select-selection__clear{
+    right: 0px;
+    background: none;
+    top: 4px;
+  }
+}
