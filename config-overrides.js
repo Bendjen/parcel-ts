@@ -56,11 +56,11 @@ module.exports = function override(config, env) {
   }
 
   // 打包后的默认publicPath为'/',这就导致了在gitPage部署时，引入的静态资源都是从域名根目录去引用，而不是当前html的相对位置
-  if(env == 'production'){
-    config.output.publicPath = ''
+  if (env == 'production') {
+    config.output.publicPath = '';
   }
 
-  console.log(config.output.publicPath)
+
 
   return config;
 };
