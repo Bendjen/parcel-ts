@@ -2,8 +2,10 @@ GitPage预览： https://bendjen.github.io/parcel-ts/
 
 ###  本项目为个人收录实践小，用于记录学习与实践前端相关知识点
 
-> * 延续初版的视觉设计元素，进行了目录结构上的简化调整（初版地址：https://github.com/Bendjen/parcel）
-> * 基于react-app配合react-app-rewired作为项目脚手架与初始配置 （相关文档：https://ant.design/docs/react/use-in-typescript-cn）
+> * 延续初版的视觉设计元素，进行了目录结构上的简化调整
+（初版地址：https://github.com/Bendjen/parcel）
+> * 基于react-app配合react-app-rewired作为项目脚手架与初始配置 
+（相关文档：https://ant.design/docs/react/use-in-typescript-cn）
 > * 技术栈采用react/react-router/webpack/typeScript,UI库采用antd，内容板块中各demo载入相关依赖，如cyclejs、rxjs等
 > * 该项目采用按需加载，优化了加载过程中的载入动画，页面设计采用插拔思想，将平时关注的内容实践后写成组件注入页面中
 
