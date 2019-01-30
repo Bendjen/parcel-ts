@@ -1,0 +1,9 @@
+{
+  "title": "基于cyclejs的响应式编程初试",
+  "dependencies": ["cycle", "xstream", "rxjs"],
+  "img": "img/javaScript/reactiveProgramming.png",
+  "route": "detail",
+  "id": "reactiveProgramming",
+  "reference": "http://cyclejs.cn/components.html",
+  "catelog": "javascript"
+}

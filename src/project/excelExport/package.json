@@ -1,0 +1,8 @@
+{
+  "title": "在前端进行excel导出",
+  "img": "img/javaScript/excelExport.png",
+  "route": "detail",
+  "id": "excelExport",
+  "dependencies": ["file-saver"],
+  "catelog": "javascript"
+}

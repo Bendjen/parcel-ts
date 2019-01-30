@@ -3,5 +3,6 @@ export interface IOptionItem {
   img: string;
   route: string;
   title: string;
-  type?: string
+  type?: string;
+  catelog?:string
 }

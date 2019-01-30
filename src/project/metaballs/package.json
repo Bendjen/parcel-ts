@@ -1,0 +1,8 @@
+{
+  "title": "利用SVG做一些黏黏的东西",
+  "img": "img/idea/metaballs.png",
+  "dependencies": [ "rxjs"],
+  "route": "detail",
+  "id": "metaballs",
+  "catelog": "idea"
+}

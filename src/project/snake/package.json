@@ -1,0 +1,9 @@
+{
+  "title": "Rxjs实现贪吃蛇",
+  "dependencies": ["rxjs"],
+  "img": "img/idea/snake.png",
+  "route": "detail",
+  "id": "snake",
+  "reference": "https://zhuanlan.zhihu.com/p/35457418",
+  "catelog": "idea"
+}

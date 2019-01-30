@@ -1,0 +1,8 @@
+{
+  "title": "基于SVG morphing的平滑动画过渡",
+  "dependencies": ["animejs"],
+  "img": "img/idea/morphing.png",
+  "route": "detail",
+  "id": "morphing",
+  "catelog": "idea"
+}

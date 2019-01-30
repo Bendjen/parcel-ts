@@ -1,0 +1,8 @@
+{
+  "title": "福州房价数据汇总",
+  "dependencies": ["echarts"],
+  "img": "img/idea/house.png",
+  "route": "detail",
+  "id": "house",
+  "catelog": "idea"
+}

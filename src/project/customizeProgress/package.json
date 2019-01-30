@@ -1,0 +1,7 @@
+{
+  "id": "customizeProgress",
+  "img": "img/css/customizeProgress.png",
+  "route": "detail",
+  "title": "自定义进度条样式",
+  "catelog": "css"
+}

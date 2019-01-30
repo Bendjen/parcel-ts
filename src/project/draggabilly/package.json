@@ -1,0 +1,8 @@
+{
+  "title": "基于draggabilly的模板编辑",
+  "dependencies": ["draggabilly"],
+  "img": "img/idea/draggabilly.png",
+  "route": "detail",
+  "id": "draggabilly",
+  "catelog": "css"
+}
