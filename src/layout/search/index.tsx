@@ -9,16 +9,11 @@ const history = createHistory();
 const Option = Select.Option;
 
 
+
 class Search extends React.Component<{}, { searchOptions: IOptionItem[] }> {
   constructor(props: {}) {
     super(props);
-    let searchOptions: IOptionItem[] = [];
-    Object.entries(menu).forEach(item => {
-      const type = item[0];
-      const value = Object.values(item[1]);
-      value.forEach((i: any) => { i.type = type });
-      searchOptions = [...searchOptions, ...value];
-    });
+    const searchOptions: IOptionItem[] = menu;
     this.state = { searchOptions };
   }
   public render() {
@@ -55,7 +50,7 @@ class Search extends React.Component<{}, { searchOptions: IOptionItem[] }> {
       </div>
     );
   }
-  
+
   private handleSelect(value: string, option: any) {
     history.push(`/detail/${option.props['data-type']}/${option.props['data-id']}`);
   }

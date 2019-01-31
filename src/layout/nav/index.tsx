@@ -20,7 +20,7 @@ class Nav extends React.Component<{}, IState> {
 		this.state = {
 			curIndex: 3,
 			navList: [
-				{ name: "JavaScript", link: "/home/javaScript" },
+				{ name: "JavaScript", link: "/home/javascript" },
 				{ name: "Css", link: "/home/css" },
 				{ name: "Idea", link: "/home/idea" },
 				{ name: "Mark", link: "/mark" },

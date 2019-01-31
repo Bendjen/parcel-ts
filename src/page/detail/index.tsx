@@ -22,9 +22,10 @@ class Detail extends React.Component<any, {}> {
   }
 
   public render() {
-    const { id, type } = this.props.match.params;
-    const title = menu[type][id].title;
-    const dependencies = menu[type][id].dependencies || [];
+    const { id } = this.props.match.params;
+    const target = menu.find(item => item.id === id)
+    const title = target.title;
+    const dependencies = target.dependencies || [];
     const dependenciesText = (dependencies || []).join("、");
     const TextModule = Loadable({
       loader: () =>

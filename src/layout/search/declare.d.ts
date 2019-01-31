@@ -4,5 +4,7 @@ export interface IOptionItem {
   route: string;
   title: string;
   type?: string;
+  dependencies?:[string];
+  reference?:string;
   catelog?:string
 }

@@ -5,7 +5,6 @@ import menu from "../../menu";
 import style from "./index.scss";
 
 // tslint:disable-next-line:no-console
-console.log(menu);
 
 class Home extends React.Component<{ match: any }> {
   constructor(props: { match: any }) {
@@ -14,7 +13,7 @@ class Home extends React.Component<{ match: any }> {
   }
   public render() {
     const type = this.props.match.params.type || "idea";
-    const list = Object.values(menu[type] || {});
+    const list = menu.filter(item=>item.catelog === type)
     const average = Math.floor(list.length / 3);
     const remainder = list.length % 3;
     const cols: any = [[], [], []];
