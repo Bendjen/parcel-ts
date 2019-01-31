@@ -13,7 +13,7 @@ class Home extends React.Component<{ match: any }> {
   }
   public render() {
     const type = this.props.match.params.type || "idea";
-    const list = menu.filter(item=>item.catelog === type)
+    const list = menu.filter((item:any)=>item.catelog === type)
     const average = Math.floor(list.length / 3);
     const remainder = list.length % 3;
     const cols: any = [[], [], []];

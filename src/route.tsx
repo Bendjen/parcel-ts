@@ -10,8 +10,6 @@ const Loading = () => (
 	</div>
 )
 
-	;
-
 const About = Loadable({
 	loader: () => import('./page/about'),
 	loading: Loading,

@@ -23,7 +23,7 @@ class Detail extends React.Component<any, {}> {
 
   public render() {
     const { id } = this.props.match.params;
-    const target = menu.find(item => item.id === id)
+    const target = menu.find((item:any) => item.id === id)
     const title = target.title;
     const dependencies = target.dependencies || [];
     const dependenciesText = (dependencies || []).join("、");
