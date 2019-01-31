@@ -1,8 +1,0 @@
-{
-  "title": "unname",
-  "dependencies": ["test"],
-  "img": "img/idea/house.png",
-  "route": "detail",
-  "id": "unname",
-  "catelog": "idea"
-}
