@@ -67,8 +67,8 @@ class About extends React.Component {
             <div className={style.content}>
               <div>
                 历史版本：
-                <a target="_blank" href="https://bendjen.github.io/parcel-old/">
-                  https://bendjen.github.io/parcel-old/
+                <a target="_blank" href="https://bendjen.github.io/parcel-embryo">
+                  https://bendjen.github.io/parcel-embryo
                 </a>
               </div>
               <div>所用架构： react、webpack、typescript、antd</div>
@@ -77,13 +77,13 @@ class About extends React.Component {
                 相比旧版：
                 <ol>
                   <li>
-                    弃用了原来只是为了用而用的redux作状态管理，直接用路由信息来进行页面与demo模块的自动寻址与动态引入。
+                    弃用了繁重的redux状态管理，改用webpack的require.context()，自动目录寻址配置；改用按需加载提升加载速度。
                   </li>
                   <li>
-                    重构了目录结构，旧版采用以demo组件为单位形成页面，会有大量冗余的通用代码；而现在以页面功能为单位只剩下home、detai、mark、about四个页面，demo与代码文本以插件形式动态插入detail页面中，非常整洁清爽！
+                    重构了目录结构，旧版采用以项目组件为单位形成页面，会有大量冗余的通用代码；而现在提炼以页面功能组件为单位只剩下home、detai、mark、about四个页面。
                   </li>
                   <li>
-                    采用typeScript重构，代码更加规范。
+                    采用typeScript、react-app-rewired进行了重构。
                   </li>
                 </ol>
               </div>

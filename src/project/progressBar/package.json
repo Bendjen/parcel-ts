@@ -1,0 +1,8 @@
+{
+  "title": "用rxjs实现的进度条",
+  "dependencies": ["rxjs"],
+  "img": "img/idea/progressBar.png",
+  "route": "detail",
+  "id": "printProgress",
+  "catelog": "idea"
+}
