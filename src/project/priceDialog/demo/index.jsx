@@ -7,7 +7,7 @@ class Demo extends React.Component {
   }
   render() {
     return (
-      <div>HELLO WORLD</div>
+      <div>HELLO WORLD!</div>
     );
   }
 }

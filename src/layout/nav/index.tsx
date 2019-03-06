@@ -18,7 +18,7 @@ class Nav extends React.Component<{}, IState> {
 		super(props);
 
 		this.state = {
-			curIndex: 3,
+			curIndex: 5,
 			navList: [
 				{ name: "JavaScript", link: "/home/javascript" },
 				{ name: "Css", link: "/home/css" },

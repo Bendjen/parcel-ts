@@ -31,7 +31,7 @@ const Mark = Loadable({
 const Main = () => (
 	<Body>
 		<Switch>
-			<Route exact={true} path="/" component={Mark} />
+			<Route exact={true} path="/" component={About} />
 			<Route exact={true} path="/home/:type" component={Home} />
 			<Route exact={true} path="/detail/:type/:id" component={Detail} />
 			<Route exact={true} path="/mark" component={Mark} />
