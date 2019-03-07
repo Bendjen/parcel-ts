@@ -4,8 +4,8 @@ import style from "./index.scss";
 import { Observable } from "rxjs/Observable";
 import { Scheduler } from "rxjs/Scheduler";
 
-import { of, from, interval,combineLatest } from 'rxjs'
-import { tap,map } from 'rxjs/operators';
+import { of, from, interval, combineLatest } from 'rxjs'
+import { tap, map } from 'rxjs/operators';
 
 import {
   moveTo,
