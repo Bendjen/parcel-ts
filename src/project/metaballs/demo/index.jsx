@@ -3,6 +3,10 @@ import style from "./index.scss";
 // import Rx from "rxjs";
 import { Observable } from "rxjs/Observable";
 import { Scheduler } from "rxjs/Scheduler";
+
+import { of, from, interval,combineLatest } from 'rxjs'
+import { tap,map } from 'rxjs/operators';
+
 import {
   moveTo,
   line,
@@ -26,22 +30,26 @@ class Metaballs extends React.Component {
 
     // of：创建一个 Observable，它会依次发出由你提供的参数，最后发出完成通知。
     // do：拦截源 Observable 上的每次发送并且运行一个函数，但返回的输出 Observable 与 源 Observable 是相同的。
-    const circle1$ = Observable.of([600, 120]).do(loc => {
-      moveTo(loc, circle1);
-    });
+    const circle1$ = of([600, 120]).pipe(
+      tap(loc => {
+        moveTo(loc, circle1);
+      })
+    )
 
     // interval：创建一个 Observable ，该 Observable 使用指定的 IScheduler ，并以指定时间间隔发出连续的数字。
     // map ：转化发出的value
     // Scheduler.animationFrame : 动画帧调度器
-    const circle2$ = Observable.interval(0, Scheduler.animationFrame)
-      .map(frame => 200 * Math.sin(frame / 500)) //利用余弦函数得到变化的x值
-      .map(x => [600 + x, 120])
-      .do(loc => {
+    const circle2$ = interval(0, Scheduler.animationFrame).pipe(
+      map(frame => 200 * Math.sin(frame / 500)), //利用余弦函数得到变化的x值
+      map(x => [600 + x, 120]),
+      tap(loc => {
         moveTo(loc, circle2);
-      });
+      })
+    )
+
 
     // combineLatest：组合多个 Observables 来创建一个 Observable ，该 Observable 的值根据每个输入 Observable 的最新值计算得出的。
-    Observable.combineLatest(circle1$, circle2$, (circle1Loc, circle2Loc) =>
+    combineLatest(circle1$, circle2$, (circle1Loc, circle2Loc) =>
       metaball(SIZES.CIRCLE1, SIZES.CIRCLE2, circle1Loc, circle2Loc)
     ).subscribe(path => {
       connector.setAttribute("d", path);
