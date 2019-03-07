@@ -1,8 +1,8 @@
 {
   "title": "带当日价格的日历组件",
   "dependencies": [],
-  "img": "img/idea/priceDialog.png",
+  "img": "img/idea/priceCalendar.png",
   "route": "detail",
-  "id": "priceDialog",
+  "id": "priceCalendar",
   "catelog": "idea"
 }

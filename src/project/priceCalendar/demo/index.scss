@@ -1,0 +1,33 @@
+:local{
+  .calendarContainer{
+    margin-top: 20px;
+    border:1px solid #e5e5e5;
+    width: 400px;
+    padding: 20px;
+  }
+
+  .curMonth{
+    font-size: 16px;
+    cursor: pointer;
+    &:hover{
+      color:#40a9ff;
+    }
+  }
+
+  .calendarCol{
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .iconLeft,.iconRight{
+    font-size: 16px;
+    i{
+      margin: 0 5px;
+      cursor: pointer;
+      &:hover{
+        color:#40a9ff;
+      }
+    }
+  }
+
+}
