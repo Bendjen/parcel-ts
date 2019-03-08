@@ -26,7 +26,7 @@ class PriceCalendar extends React.Component<{}, any> {
     const totalvalidNum = moment(lastDay).dayOfYear() - moment(firstDay).dayOfYear() + 1
     const startWeekDay = moment(firstDay).day()
     const endWeekDay = moment(lastDay).day()
-    const firstLineExtraNum = startWeekDay === 0 ? 6 : startWeekDay - 1
+    const firstLineExtraNum = startWeekDay === 0 ? 6 : (startWeekDay === 1 ? 7 : startWeekDay - 1)
     const lastLineExtraNum = 7 - endWeekDay
     const totalCellNum = totalvalidNum + firstLineExtraNum + lastLineExtraNum
     const calendarArray = [];
@@ -34,7 +34,7 @@ class PriceCalendar extends React.Component<{}, any> {
       if (i < firstLineExtraNum) {
         calendarArray.push({
           valid: false,
-          date: moment(firstDay).subtract(startWeekDay === 0 ? (7 - i - 1) : (startWeekDay - i - 1), 'days'),
+          date: moment(firstDay).subtract(startWeekDay === 0 ? (7 - i - 1) : (startWeekDay === 1 ? (7 - i) : (startWeekDay - i - 1)), 'days'),
           price: 100
         })
       } else if (i > totalCellNum - lastLineExtraNum - 1 && i < totalCellNum) {
