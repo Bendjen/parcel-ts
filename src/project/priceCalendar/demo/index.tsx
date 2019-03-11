@@ -2,7 +2,7 @@ import { Icon, Input } from 'antd';
 import moment from 'moment';
 import React from "react";
 import style from "./index.scss"
-
+import REST from "./rest"
 class PriceCalendar extends React.Component<{}, any> {
   constructor(props: {}) {
     super(props);
@@ -32,22 +32,28 @@ class PriceCalendar extends React.Component<{}, any> {
     const calendarArray = [];
     for (let i = 0; i < totalCellNum; i++) {
       if (i < firstLineExtraNum) {
+        const cellDate: any = moment(firstDay).subtract(startWeekDay === 0 ? (7 - i - 1) : (startWeekDay === 1 ? (7 - i) : (startWeekDay - i - 1)), 'days')
         calendarArray.push({
           valid: false,
-          date: moment(firstDay).subtract(startWeekDay === 0 ? (7 - i - 1) : (startWeekDay === 1 ? (7 - i) : (startWeekDay - i - 1)), 'days'),
-          price: 100
+          date: cellDate,
+          price: 100,
+          isFestival: REST.includes(moment(cellDate).format('YYYY-MM-DD'))
         })
       } else if (i > totalCellNum - lastLineExtraNum - 1 && i < totalCellNum) {
+        const cellDate: any = moment(lastDay).add(lastLineExtraNum - (totalCellNum - i) + 1, 'days')
         calendarArray.push({
           valid: false,
-          date: moment(lastDay).add(lastLineExtraNum - (totalCellNum - i) + 1, 'days'),
-          price: 100
+          date: cellDate,
+          price: 100,
+          isFestival: REST.includes(moment(cellDate).format('YYYY-MM-DD'))
         })
       } else {
+        const cellDate: any = moment(firstDay).add(i - firstLineExtraNum, 'days')
         calendarArray.push({
           valid: true,
           date: moment(firstDay).add(i - firstLineExtraNum, 'days'),
-          price: 100
+          price: 100,
+          isFestival: REST.includes(moment(cellDate).format('YYYY-MM-DD')),
         })
       }
     }
@@ -101,10 +107,15 @@ class PriceCalendar extends React.Component<{}, any> {
             return (<div key={index} className={style.calendarLine} data-flex='main:justify cross:center'>
               {new Array(7).fill(null).map((v, i) => {
                 const targetDate = this.state.calendarArray[i + index * 7];
-                return (<p key={i} className={moment(this.state.pickDate).isSame(targetDate.date) ? style['pick-date'] : null} data-flex='dir:top main:center cross:center' onClick={this.setPickDate.bind(this, i + index * 7)}>
-                  <span className={targetDate.valid ? null : style['disabled-date']}>{moment(targetDate.date).format("DD")}</span>
+                return (<p key={i} className={moment(this.state.pickDate).startOf('day').isSame(moment(targetDate.date).startOf('day')) ? style['pick-date'] : (targetDate.valid ? null : style['disabled-date'])}
+                  data-flex='dir:top main:center cross:center' onClick={this.setPickDate.bind(this, i + index * 7)}>
+                  <span>{moment(targetDate.date).format("DD")}</span>
                   {targetDate.valid ?
                     <span className={style.price}>￥{targetDate.price}</span> :
+                    ''
+                  }
+                  {targetDate.isFestival ?
+                    <span className={style.rest}>休</span> :
                     ''
                   }
                 </p>)
@@ -140,6 +151,20 @@ class PriceCalendar extends React.Component<{}, any> {
     const nextYear = moment(this.state.showMonth).add(1, 'year');
     this.setState({ showMonth: nextYear })
     this.changeMonth(nextYear)
+  }
+  private fetchPrice() {
+    const firstDay = moment().startOf('month')
+    const lastDay = moment().endOf('month')
+    const totalvalidNum = moment(lastDay).dayOfYear() - moment(firstDay).dayOfYear() + 1
+    const res = {}
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        for (let i = 0; i < totalvalidNum; i++) {
+          res[`${moment(firstDay).add(i, 'day').format('YYYY-MM-DD')}`] = Math.floor(Math.random() * 50)
+        }
+        resolve(res)
+      }, 1000)
+    })
   }
   private handleFoucs() {
     this.setState({

@@ -1,7 +1,7 @@
 {
   "title": "rxjs-hooks:在react中愉快的试用rxjs",
   "dependencies": ["rxjs-hooks"],
-  "img": "img/idea/house.png",
+  "img": "img/default.png",
   "route": "detail",
   "id": "rxjsHook",
   "catelog": "javascript"
