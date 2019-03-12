@@ -1,4 +1,10 @@
-const htmlText = ``;
+const readMeText =
+`  关键点如下：<br/>
+  1、 计算出日历数组（展示月份的日期数据）<br/>
+  2、 遍历日历数组渲染出日历界面<br/>
+  3、 异步请求价格数据，混入每日的价格、是否休息日等扩展信息<br/>
+
+`;
 
 
 const javaScriptText = [
@@ -241,4 +247,4 @@ export default PriceCalendar;
 ]`}
 ];
 
-export default { htmlText, javaScriptText };
+export default { readMeText, javaScriptText };

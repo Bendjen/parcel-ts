@@ -31,7 +31,7 @@ class PriceCalendar extends React.Component<{}, any> {
   }
 
   // 初始化当前月份日历
-  
+
   public componentDidMount() {
     this.setState({
       showMonth: moment(),
@@ -40,27 +40,27 @@ class PriceCalendar extends React.Component<{}, any> {
     this.changeMonth()
   }
 
-    // 异步查询月份日历价格，本地随机模拟
+  // 异步查询月份日历价格，本地随机模拟
 
-    private fetchPrice(date: any) {
-      const firstDay = moment(date).startOf('month')
-      const lastDay = moment(date).endOf('month')
-      const totalvalidNum = moment(lastDay).dayOfYear() - moment(firstDay).dayOfYear() + 1
-      const res = {}
-      this.setState({ loading: true })
-      return new Promise((resolve) => {
-        setTimeout(() => {
-          for (let i = 0; i < totalvalidNum; i++) {
-            res[`${moment(firstDay).add(i, 'day').format('YYYY-MM-DD')}`] = Math.floor(Math.random() * 50)
-          }
-          this.setState({ loading: false })
-          resolve(res)
-        }, 1000)
-      })
-    }
+  private fetchPrice(date: any) {
+    const firstDay = moment(date).startOf('month')
+    const lastDay = moment(date).endOf('month')
+    const totalvalidNum = moment(lastDay).dayOfYear() - moment(firstDay).dayOfYear() + 1
+    const res = {}
+    this.setState({ loading: true })
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        for (let i = 0; i < totalvalidNum; i++) {
+          res[`${moment(firstDay).add(i, 'day').format('YYYY-MM-DD')}`] = Math.floor(Math.random() * 50)
+        }
+        this.setState({ loading: false })
+        resolve(res)
+      }, 1000)
+    })
+  }
 
   // 变更月份时，重新获取价格与计算日历数组
-   
+
   private async changeMonth(date: any = moment()) {
     const priceList = await this.fetchPrice(date)
     const firstDay = moment(date).startOf('month')

@@ -1,5 +1,5 @@
 {
-  "title": "利用SVG做一些黏黏的东西",
+  "title": "Rxjs与SVG动画",
   "img": "img/idea/metaballs.png",
   "dependencies": [ "rxjs"],
   "route": "detail",

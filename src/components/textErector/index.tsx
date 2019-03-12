@@ -8,7 +8,7 @@ class TextRender extends React.Component<IProps>{
 
   public render() {
     if (!!this.props.text) {
-      if (this.props.title === '功能') {
+      if (this.props.title === '说明') {
         return this.introduceRender()
       } else {
         return this.codeRender()
@@ -65,7 +65,7 @@ function textErector(textList: ITextList): any {
     public render() {
       return (
         <section>
-          <TextRender title='功能' language='html' text={textList.readMeText} />
+          <TextRender title='说明' language='html' text={textList.readMeText} />
           <TextRender title='使用' language='javascript' text={textList.exampleText} />
           <TextRender title='Html' language='html' text={textList.htmlText} />
           <TextRender title='JavaScript' language='jsx' text={textList.javaScriptText} />

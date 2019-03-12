@@ -34,7 +34,7 @@ module.exports = function override(config, env) {
 
   // 增加tsx作为默认值
   const resolve = config.resolve;
-  resolve.extensions = [...resolve.extensions, ".tsx", ".ts"];
+  resolve.extensions = [...resolve.extensions, ".tsx", ".jsx", ".ts", ".js"];
 
   // 增加别名
   resolve.alias["@"] = path.resolve(__dirname, "src");
