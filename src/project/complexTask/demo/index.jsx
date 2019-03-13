@@ -1,14 +1,16 @@
-import { Button, Modal } from "antd"
+import { Button, Modal, Progress, Icon } from "antd"
 import React from "react";
 import { from, of } from 'rxjs'
 import { catchError, filter, map, mergeMap, switchMap, switchMapTo, exhaustMap } from 'rxjs/operators';
 import { changePrintStatus, fetchOrderInfo, fetchTemplate, printTicket, uploadLog } from "./service";
-
+import "antd/dist/antd.css";
+import style from './index.scss'
 class ComplexTask extends React.Component {
   constructor(props) {
     super(props);
     this.executeTask = this.executeTask.bind(this)
     this.assembleTask = this.assembleTask.bind(this)
+    this.handleCancel = this.handleCancel.bind(this)
     this.state = {
       combineOrdernum: 'CMB-0071516106',
       visible: true
@@ -18,13 +20,11 @@ class ComplexTask extends React.Component {
     return (
       <div>
         <Button type="primary" icon="caret-right" onClick={this.executeTask}>执行任务</Button>
-        <Modal
-          title="Basic Modal"
-          visible={this.state.visible}
-        >
-          <p>Some contents...</p>
-          <p>Some contents...</p>
-          <p>Some contents...</p>
+        <Modal visible={this.state.visible} onCancel={this.handleCancel} maskClosable={false}>
+          <div className={style.modalContainer}>
+            <p className={style.modalTitle}>任务进行中 <Icon type="loading" /> </p>
+            <Progress percent={50} strokeWidth={30} status="active" />
+          </div>
         </Modal>
       </div>
     );
@@ -38,6 +38,9 @@ class ComplexTask extends React.Component {
       // tslint:disable-next-line:no-console
       console.log(err)
     })
+  }
+  handleCancel() {
+    this.setState({ visible: false })
   }
   assembleTask() {
     let successTaskList = [];

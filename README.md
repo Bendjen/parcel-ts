@@ -11,7 +11,7 @@ GitPage预览： https://bendjen.github.io/parcel-ts/
 
 ###  使用
 
-> * npm install  用cnpm可能会有ts重复声明的问题
+> * yarn install  用cnpm可能会有ts重复声明的问题
 > * 若依旧不行，删除目录下的node_modules文件夹后，解压node_modules.7z底包后再执行npm install
 
 
