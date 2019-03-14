@@ -59,7 +59,7 @@ export function uploadLog(params: { ordernum: string, status: string }) {
 
 // 模拟请求打印机发起打印
 
-export function printTicket(params: { ordernum: string, status: string }) {
+export function printTicket(params: { ordernum: string, tempalte: string }) {
   return new Promise(resolve => {
     setTimeout(() => {
       resolve({

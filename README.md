@@ -30,3 +30,7 @@ GitPage预览： https://bendjen.github.io/parcel-ts/
 3.将页面布到gitPage时，引用的静态资源为域名下的根目录开始
 
 > * 将正式环境webpack的output.publicPath 配置为 '' （默认为 '/'）
+
+4.启用cssModule时，className如何写入多个类
+
+> * className={`${style.modalTitle}  ${style.green}`}

@@ -46,7 +46,7 @@ class Detail extends React.Component<any, {}> {
       <div className={style.container}>
         <QueueAnim type="right" ease="easeInOutQuart">
           <Badge
-            className={style.themeName}
+            className={style.themeTitle}
             key="title"
             status={dependencies.length === 0 ? "default" : "warning"}
             text={dependenciesText}

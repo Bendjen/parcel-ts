@@ -8,7 +8,7 @@ function demoErector(Demo: any): any {
       if (Demo) {
         return (
           <section key="demo">
-            <h2 className={style.title}>Demo:</h2>
+            <h2 className={style.title}>Demo</h2>
             <div className={style.content} data-flex="main:center">
               <Demo />
             </div>
