@@ -1,7 +1,8 @@
+// tslint:disable-next-line:no-var-requires
+const FileSaver = require("file-saver");
 import QueueAnim from "rc-queue-anim";
 import React from "react";
 import style from "./index.scss";
-
 class About extends React.Component {
   public render() {
     return (
@@ -23,20 +24,8 @@ class About extends React.Component {
                 英语水平：英语六级
               </div>
               <div>兴趣爱好：游泳、钢琴</div>
-              <div>工作经历：有一年半前端开发经验，目前就职于票付通</div>
-              {/* <div>能力水平：
-              <ol>
-                  <li>
-                    可以独立使用Vue生态(vue/vue-router/vuex/elementUI)/React生态(react/react-router/redux/antd)进行业务开发
-                  </li>
-                  <li>
-                    有参与小程序和基于Electron开发桌面APP的经验；熟悉ES6、移动端自适应开发
-                  </li>
-                  <li>可以独立使用Webpack或parcel进行打包与架构</li>
-                  <li>熟悉Git协作模式</li>
-                  <li>具有较强的学习能力与对新技术的热情</li>
-                </ol>
-              </div> */}
+              <div>工作经历：拥有两年前端开发经验，熟悉前端主流技术栈，可以独立构建开发，目前就职于票付通</div>
+              <div data-flex='cross:center'>我的简历：<img className={style.excel} onClick={this.downloadResume} src="img/assets/excel-iocn.png" alt="" /></div>
             </div>
           </section>
 
@@ -62,7 +51,16 @@ class About extends React.Component {
             </div>
           </section>
 
-          <section key="aboutSite">
+          <section key="MyProject">
+            <h1 className={style.title}>我的项目</h1>
+            <div className={style.content}>
+              <div>
+                <p>个人小站：本页</p>
+              </div>
+            </div>
+          </section>
+
+          <section key="AboutSite">
             <h1 className={style.title}>关于本站</h1>
             <div className={style.content}>
               <div>
@@ -97,6 +95,9 @@ class About extends React.Component {
         </QueueAnim>
       </div>
     );
+  }
+  private downloadResume() {
+    FileSaver.saveAs("/resume/郑家燊.xls", "简历-郑家燊.xls");
   }
 }
 
