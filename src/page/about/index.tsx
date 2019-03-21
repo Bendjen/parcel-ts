@@ -25,7 +25,7 @@ class About extends React.Component {
               </div>
               <div>兴趣爱好：游泳、钢琴</div>
               <div>工作经历：拥有两年前端开发经验，熟悉前端主流技术栈，可以独立构建开发，目前就职于票付通</div>
-              <div data-flex='cross:center'>我的简历：<img className={style.excel} onClick={this.downloadResume} src="img/assets/excel-iocn.png" alt="" /></div>
+              <div data-flex='cross:center'>我的简历：<img className={style.resume} onClick={this.downloadResume} src="img/assets/pdf-icon.png" alt="" /></div>
             </div>
           </section>
 
@@ -54,8 +54,36 @@ class About extends React.Component {
           <section key="MyProject">
             <h1 className={style.title}>我的项目</h1>
             <div className={style.content}>
-              <div>
-                <p>个人小站：本页</p>
+              <div className={style.projectItem}>
+                <h2>个人小站（本页）</h2>
+                <p>页面地址：<a href="https://bendjen.github.io/parcel-ts#home/idea" target="_blank">https://bendjen.github.io/parcel-ts</a></p>
+                <p>Github：<a href="https://github.com/Bendjen/parcel-ts" target="_blank">https://github.com/Bendjen/parcel-ts</a></p>
+                <p>标签：react、typescript、rxjs、antd</p>
+                <p data-flex='main:center cross:center'>
+                  <img src="img/assets/demo.gif" alt="" />
+                </p>
+              </div>
+            </div>
+            <div className={style.content} style={{marginTop:40}}>
+              <div className={style.projectItem}>
+                <h2>Piecework-Manager（数据可视化/PC）</h2>
+                <p>页面地址：<a href="https://bendjen.github.io/Piecework-Manager-pc" target="_blank">https://bendjen.github.io/Piecework-Manager-pc</a></p>
+                <p>Github：<a href="https://github.com/Bendjen/Piecework-Manager-pc" target="_blank">https://github.com/Bendjen/Piecework-Manager-pc</a></p>
+                <p>标签：vue、typescript、g2、element-ui</p>
+                <p data-flex='main:center cross:center'>
+                  <img src="img/assets/demo.gif" alt="" />
+                </p>
+              </div>
+            </div>
+            <div className={style.content} style={{marginTop:40}}>
+              <div className={style.projectItem}>
+                <h2>Piecework-Manager（数据可视化/Mobile）</h2>
+                <p>页面地址：<a href="https://bendjen.github.io/Piecework-Manager-mobile" target="_blank">https://bendjen.github.io/Piecework-Manager-mobile</a></p>
+                <p>Github：<a href="https://github.com/Bendjen/Piecework-Manager-mobile" target="_blank">https://github.com/Bendjen/Piecework-Manager-mobile</a></p>
+                <p>标签：vue、parcel、echarts、vant</p>
+                <p data-flex='main:center cross:center'>
+                  <img src="img/assets/demo.gif" alt="" />
+                </p>
               </div>
             </div>
           </section>
@@ -97,7 +125,7 @@ class About extends React.Component {
     );
   }
   private downloadResume() {
-    FileSaver.saveAs("/resume/郑家燊.xls", "简历-郑家燊.xls");
+    FileSaver.saveAs("/resume/郑家燊的简历.pdf", "郑家燊的简历.pdf");
   }
 }
 
