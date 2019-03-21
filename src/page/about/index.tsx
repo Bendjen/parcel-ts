@@ -125,7 +125,7 @@ class About extends React.Component {
     );
   }
   private downloadResume() {
-    FileSaver.saveAs("/resume/郑家燊的简历.pdf", "郑家燊的简历.pdf");
+    FileSaver.saveAs("/parcel-ts/resume/郑家燊的简历.pdf", "郑家燊的简历.pdf");
   }
 }
 
