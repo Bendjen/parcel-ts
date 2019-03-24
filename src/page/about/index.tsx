@@ -67,7 +67,7 @@ class About extends React.Component {
             <div className={style.content} style={{marginTop:40}}>
               <div className={style.projectItem}>
                 <h2>Piecework-Manager（数据可视化/PC）</h2>
-                <p>页面地址：<a href="https://bendjen.github.io/Piecework-Manager-pc" target="_blank">https://bendjen.github.io/Piecework-Manager-pc</a></p>
+                <p>页面地址：<a href="https://bendjen.github.io/Piecework-Manager-pc?MOCK_FLAG=true" target="_blank">https://bendjen.github.io/Piecework-Manager-pc</a></p>
                 <p>Github：<a href="https://github.com/Bendjen/Piecework-Manager-pc" target="_blank">https://github.com/Bendjen/Piecework-Manager-pc</a></p>
                 <p>标签：vue、typescript、g2、element-ui</p>
                 <p data-flex='main:center cross:center'>
