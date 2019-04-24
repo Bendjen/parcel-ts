@@ -43,11 +43,31 @@ class About extends React.Component<{}, IState> {
         },
         {
           type: "Vue",
-          title: "Vue.js",
+          title: "Vue",
           articles: [
             {
               title: "逐行解读Vue",
               url: "http://hcysun.me/vue-design/art/6vue-init-start.html"
+            }
+          ]
+        },
+        {
+          type: "React",
+          title: "React",
+          articles: [
+            {
+              title: "React Hooks",
+              url: "https://mp.weixin.qq.com/s/vHzgNqaRiDF9tq3JgW7LxQ"
+            }
+          ]
+        },
+        {
+          type: "Webpack",
+          title: "Webpack",
+          articles: [
+            {
+              title: "Webpack-dev-server的proxy解决开发环境的跨域问题",
+              url: "https://github.com/funnycoderstar/blog/issues/42"
             }
           ]
         },
@@ -62,31 +82,6 @@ class About extends React.Component<{}, IState> {
             {
               title: "Three.js中的自定义几何体",
               url: "https://mp.weixin.qq.com/s/7wOHircEX3qUMWtukjRvnw"
-            }
-          ]
-        },
-        {
-          type: "WebAssembly",
-          title: "WebAssembly",
-          articles: [
-            {
-              title: "WebAssembly 现状与实战",
-              url:
-                "https://www.ibm.com/developerworks/cn/web/wa-lo-webassembly-status-and-reality/index.html"
-            }
-          ]
-        },
-        {
-          type: "Nodejs",
-          title: "Node.js",
-          articles: [
-            {
-              title: "GMTC大会专访：Node.js 2018年大前端潮流解析",
-              url: "https://mp.weixin.qq.com/s/J79c-gPD_7e3MZuRYCp2bA"
-            },
-            {
-              title: "结合源码分析 Node.js 模块加载与运行原理",
-              url: "http://efe.baidu.com/blog/nodejs-module-analyze/"
             }
           ]
         },
