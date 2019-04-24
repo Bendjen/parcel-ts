@@ -3,7 +3,7 @@ import style from './index.scss'
 
 
 function demoErector(Demo: any): any {
-  return class TextErector extends React.Component {
+  return class DemoErector extends React.Component {
     public render() {
       if (Demo) {
         return (
