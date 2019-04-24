@@ -110,10 +110,11 @@ class PriceCalendar extends React.Component<{}, any> {
 
   private calendarRender() {
     const lineNum = Math.ceil(this.state.calendarArray.length / 7)
+    const antIcon = <Icon type="loading" style={{ fontSize: 36 }} spin={true} />;
     return (<div className={style.calendarContainer} >
       {
         this.state.loading ?
-          <div className={style.loading} data-flex='main:center cross:center'> <Spin /></div> :
+          <div className={style.loading} data-flex='main:center cross:center'> <Spin indicator={antIcon}/></div> :
           null
       }
 

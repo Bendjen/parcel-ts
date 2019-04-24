@@ -1,5 +1,5 @@
 {
-  "title": "异步请求价格的日历组件",
+  "title": "日历组件实现与异步请求",
   "dependencies": ["moment"],
   "img": "img/idea/priceCalendar.png",
   "route": "detail",
