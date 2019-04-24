@@ -1,0 +1,8 @@
+{
+  "title": "爬虫数据可视化-词云",
+  "dependencies": ["g2"],
+  "img": "img/idea/word-cloud.png",
+  "route": "detail",
+  "id": "unname",
+  "catelog": "idea"
+}

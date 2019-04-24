@@ -1,0 +1,8 @@
+{
+  "title": "人脸识别",
+  "dependencies": ["tracking.js"],
+  "img": "img/idea/face-detection.png",
+  "route": "detail",
+  "id": "face-detection",
+  "catelog": "idea"
+}

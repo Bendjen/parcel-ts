@@ -77,6 +77,16 @@ class About extends React.Component {
             </div>
             <div className={style.content} style={{marginTop:40}}>
               <div className={style.projectItem}>
+                <h2>Chat-Room（聊天室）</h2>
+                <p>Github：<a href="https://github.com/Bendjen/Piecework-Manager-pc" target="_blank">https://github.com/Bendjen/Piecework-Manager-pc</a></p>
+                <p>标签：node.js socket.io</p>
+                <p data-flex='main:center cross:center'>
+                  <img src="img/assets/chat-room.gif" alt="" />
+                </p>
+              </div>
+            </div>
+            <div className={style.content} style={{marginTop:40}}>
+              <div className={style.projectItem}>
                 <h2>Piecework-Manager（数据可视化/Mobile）</h2>
                 <p>页面地址：<a href="https://bendjen.github.io/Piecework-Manager-mobile" target="_blank">https://bendjen.github.io/Piecework-Manager-mobile</a></p>
                 <p>Github：<a href="https://github.com/Bendjen/Piecework-Manager-mobile" target="_blank">https://github.com/Bendjen/Piecework-Manager-mobile</a></p>
