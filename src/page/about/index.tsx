@@ -79,7 +79,7 @@ class About extends React.Component {
               <div className={style.projectItem}>
                 <h2>Chat-Room（聊天室）</h2>
                 <p>Github：<a href="https://github.com/Bendjen/Piecework-Manager-pc" target="_blank">https://github.com/Bendjen/Piecework-Manager-pc</a></p>
-                <p>标签：node.js socket.io</p>
+                <p>标签：node.js、socket.io</p>
                 <p data-flex='main:center cross:center'>
                   <img src="img/assets/chat-room.gif" alt="" />
                 </p>
