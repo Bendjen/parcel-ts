@@ -1,6 +1,6 @@
 {
   "title": "人脸识别",
-  "dependencies": ["tracking.js"],
+  "dependencies": ["tracking"],
   "img": "img/idea/face-detection.png",
   "route": "detail",
   "id": "face-detection",
