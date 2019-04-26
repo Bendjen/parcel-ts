@@ -60,7 +60,7 @@ class About extends React.Component {
                 <p>Github：<a href="https://github.com/Bendjen/parcel-ts" target="_blank">https://github.com/Bendjen/parcel-ts</a></p>
                 <p>标签：react、typescript、rxjs、antd</p>
                 <p data-flex='main:center cross:center'>
-                  <img src="img/assets/parcel-ts.gif" alt="" />
+                  <img src="img/project/parcel-ts.gif" alt="" />
                 </p>
               </div>
             </div>
@@ -71,7 +71,7 @@ class About extends React.Component {
                 <p>Github：<a href="https://github.com/Bendjen/Piecework-Manager-pc" target="_blank">https://github.com/Bendjen/Piecework-Manager-pc</a></p>
                 <p>标签：vue、typescript、g2、element-ui</p>
                 <p data-flex='main:center cross:center'>
-                  <img src="img/assets/piecework-manager-pc.gif" alt="" />
+                  <img src="img/project/piecework-manager-pc.gif" alt="" />
                 </p>
               </div>
             </div>
@@ -81,7 +81,7 @@ class About extends React.Component {
                 <p>Github：<a href="https://github.com/Bendjen/Piecework-Manager-pc" target="_blank">https://github.com/Bendjen/Piecework-Manager-pc</a></p>
                 <p>标签：node.js、socket.io</p>
                 <p data-flex='main:center cross:center'>
-                  <img src="img/assets/chat-room.gif" alt="" />
+                  <img src="img/project/chat-room.gif" alt="" />
                 </p>
               </div>
             </div>
@@ -92,7 +92,7 @@ class About extends React.Component {
                 <p>Github：<a href="https://github.com/Bendjen/Piecework-Manager-mobile" target="_blank">https://github.com/Bendjen/Piecework-Manager-mobile</a></p>
                 <p>标签：vue、parcel、echarts、vant</p>
                 <p data-flex='main:center cross:center'>
-                  <img src="img/assets/piecework-manager-mobile.gif" alt="" />
+                  <img src="img/project/piecework-manager-mobile.gif" alt="" />
                 </p>
               </div>
             </div>
