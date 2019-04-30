@@ -64,9 +64,12 @@ class Demo extends React.Component {
       }, 0)
     }
   }
+
+  // 点击预览
   previewItem(status, previewImgInfo = null, e) {
-    previewVisibleStatus = status
+    previewVisibleStatus = status     // 点击列表item时，previewVisibleStatus进入显示状态，点击蒙层时，进入开始关闭状态
     if (previewVisibleStatus === 1) {
+      // 如果是显示状态，则记录初始位置，并设置previewStatus为1
       currentPreviewEle = e.target
       // First
       rectInfo = currentPreviewEle.getBoundingClientRect()
@@ -83,7 +86,8 @@ class Demo extends React.Component {
     }
   }
   transEnd(e) {
-    if (previewVisibleStatus === 2 && previewVisibleStatus !== 3) {
+    // 如果是关闭的动画结束，将previewVisibleStatus改为关闭，previewStatus改为0
+    if (previewVisibleStatus === 2) {
       previewVisibleStatus = 3
       this.setState({
         previewStatus: 0
@@ -113,7 +117,7 @@ class Demo extends React.Component {
               <div className="preview-box"
                 onClick={this.previewItem.bind(this, 2)}
                 style={{
-                  opacity: previewStatus === 3 && previewVisibleStatus !== 2 ? .65 : 0
+                  opacity: previewStatus === 3 && previewVisibleStatus !== 2 ? .6 : 0
                 }}></div>
               <img
                 ref={this.previewRef}

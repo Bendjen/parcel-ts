@@ -27,7 +27,6 @@
 }
 .pic {
   width: 100%;
-  width: 100%;
 }
 
 .preview-box {
@@ -36,7 +35,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  opacity: 0;
+  opacity: 0.6;
   background-color: #000;
   transition: opacity .36s ease-in-out;
   z-index: 1000;

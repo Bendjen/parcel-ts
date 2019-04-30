@@ -1,0 +1,8 @@
+{
+  "title": "flip动画过渡-增删动画",
+  "img": "img/css/flip-card.png",
+  "route": "detail",
+  "id": "flip-card",
+  "catelog": "css",
+  "reference": "https://blog.csdn.net/DeepLies/article/details/88087881"
+}

@@ -1,0 +1,8 @@
+{
+  "title": "flip动画过渡-图片预览",
+  "img": "img/css/flip-preview.png",
+  "route": "detail",
+  "id": "flip-preview",
+  "catelog": "css",
+  "reference": "https://blog.csdn.net/DeepLies/article/details/88087881"
+}
