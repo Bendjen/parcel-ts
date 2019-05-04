@@ -1,143 +1,112 @@
+import React from "react"
+import style from './index.scss'
 
-import React from "react";
-import './index.scss'
+const first = { left: 0, top: 0 };
+const last = { left: 0, top: 0 };
 
-// 标识预览的状态，1：显示，2：开始关闭，3：已关闭
-let previewVisibleStatus = 3
-// 当前预览的元素
-let currentPreviewEle = null
-// 记录动画起始状态的元素位置信息，left, top
-const previewFirstRect = [0, 0]
-const previewLastRect = [0, 0]
-// 临时记录位置信息
-let rectInfo = null
-// First与Last两个状态之间的缩放比例
-let scaleValue = 1
-// 生成初始测试数据
-let listData = Array(5).fill().map(() => {
-  const width = getSize()
-  const height = getSize()
-  return {
-    width,
-    height,
-    bgPic: `https://dummyimage.com/${width}x${height}/${color16()}`
-  }
-})
-
-// 获取在 200-900之间的随机整数
-function getSize() {
-  return Math.round(Math.random() * 700 + 200)
-}
-// 生成随机 16进制颜色
-function color16() {
-  return ('00000' + (Math.random() * 0x1000000).toString(16)).substr(-6)
-}
-
-class Demo extends React.Component {
-  previewRef = React.createRef()
-  state = {
-    previewStatus: 0,
-    previewImgInfo: null
-  }
-  componentDidUpdate() {
-    // card 预览
-    this.updatePreviewStatus()
-  }
-  updatePreviewStatus() {
-    if (this.state.previewStatus === 1) {
-      // Last + Invert
-      if (previewVisibleStatus === 1) {
-        const lastRectInfo = this.previewRef.current.getBoundingClientRect()
-        previewLastRect[0] = lastRectInfo.left
-        previewLastRect[1] = lastRectInfo.top
-        scaleValue = rectInfo.width / lastRectInfo.width
-      }
-      this.setState({
-        previewStatus: 2
-      })
-    } else if (this.state.previewStatus === 2) {
-      // Play
-      setTimeout(() => {
-        this.setState({
-          previewStatus: 3
-        })
-      }, 0)
-    }
-  }
-
-  // 点击预览
-  previewItem(status, previewImgInfo = null, e) {
-    previewVisibleStatus = status     // 点击列表item时，previewVisibleStatus进入显示状态，点击蒙层时，进入开始关闭状态
-    if (previewVisibleStatus === 1) {
-      // 如果是显示状态，则记录初始位置，并设置previewStatus为1
-      currentPreviewEle = e.target
-      // First
-      rectInfo = currentPreviewEle.getBoundingClientRect()
-      previewFirstRect[0] = rectInfo.left
-      previewFirstRect[1] = rectInfo.top
-      this.setState({
-        previewImgInfo,
-        previewStatus: 1
-      })
-    } else {
-      this.setState({
-        previewStatus: 1
-      })
-    }
-  }
-  transEnd(e) {
-    // 如果是关闭的动画结束，将previewVisibleStatus改为关闭，previewStatus改为0
-    if (previewVisibleStatus === 2) {
-      previewVisibleStatus = 3
-      this.setState({
-        previewStatus: 0
-      })
-    }
-  }
-  render() {
-    const { previewStatus, previewImgInfo } = this.state
-    return (
-      <div>
-        <ul className="pic-list">
-          {
-            listData.map((item, index) => (
-              <li
-                key={index}
-                className="pic-item"
-                onClick={this.previewItem.bind(this, 1, item)}
-                title="点击预览">
-                <img src={item.bgPic} alt="" className="pic" />
-              </li>
-            ))
-          }
-        </ul>
-        {
-          (previewVisibleStatus === 1 || previewVisibleStatus === 2) ? (
-            <div>
-              <div className="preview-box"
-                onClick={this.previewItem.bind(this, 2)}
-                style={{
-                  opacity: previewStatus === 3 && previewVisibleStatus !== 2 ? .6 : 0
-                }}></div>
-              <img
-                ref={this.previewRef}
-                className={`img${(previewStatus === 3 && previewVisibleStatus === 1) || previewVisibleStatus === 2 ? ' active' : ''}`}
-                src={previewImgInfo.bgPic}
-                style={{
-                  transform: previewStatus === 2 || previewVisibleStatus === 2
-                    ? `translate3d(${previewFirstRect[0] - previewLastRect[0]}px, ${previewFirstRect[1] - previewLastRect[1]}px, 0) scale(${scaleValue})`
-                    : 'translate3d(0, 0, 0) scale(1)',
-                  transformOrigin: '0 0'
-                }}
-                onClick={this.previewItem.bind(this, 2)}
-                onTransitionEnd={this.transEnd.bind(this)}
-                alt="" />
-            </div>
-          ) : null
+class Flip extends React.Component {
+    constructor(props) {
+        super(props);
+        this.previewItem = this.previewItem.bind(this)
+        this.hideLayer = this.hideLayer.bind(this)
+        this.transEnd = this.transEnd.bind(this)
+        this.previewBlock = React.createRef()
+        this.state = {
+            pickItem: {
+                width: 300,
+                height: 300,
+                color: 'd3d3d3'
+            },
+            preview: false,
+            animation: 0,   // 0 : 关闭  0.5 ：预览开启动画 1 ：开启 -0.5 : 预览关闭动画  
+            blockList: new Array(5).fill(null).map(item => {
+                return {
+                    width: this.getWidth(),
+                    height: this.getHeight(),
+                    color: this.getColor()
+                }
+            })
         }
-      </div>
-    )
-  }
+    }
+    componentDidUpdate() {
+        // 如果preview已经切换到true
+        // 获取dom中的last位置
+        if (this.state.preview && this.state.animation === 0) {
+            const lastRect = this.previewBlock.current.getBoundingClientRect()
+            last.left = lastRect.left
+            last.top = lastRect.top
+            // 下一帧切换到预览开启动画
+            this.setState({ animation: 0.5 })
+        } else if (!this.state.preview && this.state.animation !== 0) {
+            // 如果preview已经切换到false
+            // dom已经消失
+            // 将动画状态切换回已关闭
+            this.setState({ animation: 0 })
+        }
+    }
+    transEnd() {
+        if (this.state.animation === 0.5) {
+            this.setState({ animation: 1 })
+        } else if (this.state.animation === -0.5) {
+            this.setState({ animation: 0, preview: false })
+        }
+    }
+    getWidth() {
+        return Math.round(Math.random() * 120 + 80)
+    }
+    getHeight() {
+        return Math.round(Math.random() * 240 + 120)
+    }
+    getColor() {
+        return ('00000' + (Math.random() * 0x1000001).toString(16)).substr(-6)
+    }
+    previewItem(index, e) {
+        if (!this.state.preview) {
+            const firstRect = e.target.getBoundingClientRect()
+            this.setState({
+                preview: true,
+                pickItem: this.state.blockList[index],
+            })
+            first.left = firstRect.left
+            first.top = firstRect.top
+        }
+    }
+    hideLayer() {
+        if (this.state.preview) {
+            this.setState({ animation: -0.5 });
+        }
+    }
+
+    render() {
+        const { animation, preview, blockList, pickItem } = this.state
+        console.log(animation)
+        return (
+            <div style={{ overflow: 'visible' }}>
+                <ul data-flex="main:center cross:bottom">
+                    {blockList.map((item, index) => {
+                        return (<li key={index} data-flex='main:center cross:center' className={style.blockItem} onClick={this.previewItem.bind(this, index)}
+                            style={{ background: `#${item.color}`, width: item.width, height: item.height, }}>{item.width} X {item.height}</li>)
+                    })}
+                </ul>
+                {preview ?
+                    <div className={`${style.layer} ${(animation === 0.5 || animation === -0.5) ? style.transition : null}`}
+                        data-flex='main:center cross:center' onClick={this.hideLayer}
+                        style={{ opacity: (animation === 0.5 || animation === 1) ? 1 : 0 }}>
+                        <div className={`${style.putPositionItem} ${(animation === 0.5 || animation === -0.5) ? style.transition : null}`}
+                            data-flex='main:center cross:center' ref={this.previewBlock} onTransitionEnd={this.transEnd}
+                            style={{
+                                background: `#${pickItem.color}`, width: pickItem.width, height: pickItem.height,
+                                transform: (animation === 0.5 || animation === -0.5) ? `translate3d(${first.left - last.left}px, ${first.top - last.top}px, 0)`
+                                    : 'translate3d(0,0,0) scale(1)'
+                            }}>
+                            {pickItem.width} X {pickItem.height}</div>
+                    </div>
+                    : null
+                }
+
+            </div>
+        )
+    }
 }
 
-export default Demo;
+export default Flip;
