@@ -96,6 +96,7 @@ class Flip extends React.Component {
         {preview ?
           <div className={`${style.layer} ${(animation === 0.5 || animation === -0.5) ? style.transition : null}`} data-flex='main:center cross:center' onClick={this.hideLayer}
           onTransitionEnd={this.transEnd} style={{ opacity: (animation === 0.5 || animation === 1) ? 1 : 0 }}>
+              {/* transition 这不能选择0.5，因为0.5是从last(0)变到first(0.5)的过程,而应该选择1(dom已经处于first的位置)开始动画*/}
             <div className={`${style.putPositionItem} ${(animation === 1 || animation === -0.5) ? style.transition : null}`} data-flex='main:center cross:center' ref={this.previewBlock}
               onTransitionEnd={this.transEnd}
                 //    难点在这里
