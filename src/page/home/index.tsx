@@ -13,27 +13,13 @@ class Home extends React.Component<{ match: any }> {
   }
   public render() {
     const type = this.props.match.params.type || "idea";
-    const list = menu.filter((item:any)=>item.catelog === type)
-    const average = Math.floor(list.length / 3);
-    const remainder = list.length % 3;
+    const list = menu.filter((item: any) => item.catelog === type)
+    let curColIndex: number = 0;
     const cols: any = [[], [], []];
-    switch (remainder) {
-      case 1:
-        cols[0] = list.slice(0, average + 1);
-        cols[1] = list.slice(average + 1, 2 * average + 1);
-        cols[2] = list.slice(2 * average + 1);
-        break;
-      case 2:
-        cols[0] = list.slice(0, average + 1);
-        cols[1] = list.slice(average + 1, 2 * average + 2);
-        cols[2] = list.slice(2 * average + 2);
-        break;
-      default:
-        cols[0] = list.slice(0, average);
-        cols[1] = list.slice(average, 2 * average);
-        cols[2] = list.slice(2 * average);
-        break;
-    }
+    list.forEach((item: any) => {
+      cols[curColIndex].push(item);
+      curColIndex === 2 ? curColIndex = 0 : curColIndex++
+    })
     return (
       <div className={style.container}>
         <QueueAnim type="bottom" ease="easeInOutQuart" data-flex="main:justify">
