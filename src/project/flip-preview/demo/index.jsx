@@ -13,8 +13,8 @@ class Flip extends React.Component {
     this.previewBlock = React.createRef()
     this.state = {
       pickItem: {
-        width: 300,
-        height: 300,
+        width: 0,
+        height: 0,
         color: 'd3d3d3'
       },
       preview: false,
