@@ -111,7 +111,7 @@ class DraggabillyComponent extends React.Component<{}, any> {
 							return (
 								<Popover
 									content={this.editToolRender(item, index)}
-									trigger="hover"
+									trigger="click"
 									key={item.id}
 								>
 									<li className={style[`${item.type}Item`]} id={item.id}>

@@ -1,7 +1,7 @@
 {
   "title": "jQuery源码学习-Deferred延迟对象",
   "dependencies": [],
-  "img": "img/javaScript/jquery.png",
+  "img": "img/javaScript/jQuery.png",
   "route": "detail",
   "id": "jquery-5",
   "catelog": "javascript"

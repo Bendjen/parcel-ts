@@ -72,6 +72,16 @@ class About extends React.Component<{}, IState> {
           ]
         },
         {
+          type: "NodeJS",
+          title: "NodeJS",
+          articles: [
+            {
+              title: "Node在小菜前端团队的技术实践",
+              url: "https://juejin.im/post/5ca321f76fb9a05e5d09bb8a#heading-2"
+            }
+          ]
+        },
+        {
           type: "AR/VR",
           title: "AR/VR",
           articles: [
@@ -82,6 +92,16 @@ class About extends React.Component<{}, IState> {
             {
               title: "Three.js中的自定义几何体",
               url: "https://mp.weixin.qq.com/s/7wOHircEX3qUMWtukjRvnw"
+            }
+          ]
+        },
+        {
+          type: "Animate",
+          title: "Animate",
+          articles: [
+            {
+              title: "如何选取合适的前端动效方案？",
+              url: "https://juejin.im/post/5cc08848e51d456e7618a6ee"
             }
           ]
         },
