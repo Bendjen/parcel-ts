@@ -72,6 +72,20 @@ class About extends React.Component<{}, IState> {
           ]
         },
         {
+          type: "Electron",
+          title: "Electron",
+          articles: [
+            {
+              title: "electron-builder打包配置",
+              url: "https://segmentfault.com/a/1190000016695922?utm_source=tag-newest"
+            },
+            {
+              title: "如何搭建Electron开发环境",
+              url: "https://segmentfault.com/a/1190000011008466"
+            }
+          ]
+        },
+        {
           type: "NodeJS",
           title: "NodeJS",
           articles: [
@@ -128,8 +142,8 @@ class About extends React.Component<{}, IState> {
           title: "作为开发者",
           articles: [
             {
-              title: "超大型 JavaScript 应用的设计哲学",
-              url: "https://zhuanlan.zhihu.com/p/35929167"
+              title: "2019前端技术趋势",
+              url: "https://mp.weixin.qq.com/s?__biz=MjM5MDE0Mjc4MA==&mid=2651014404&idx=2&sn=7ed7c965c10af5463b0ffadd9661ab61&chksm=bdbebd578ac93441467b1d81bc81141f2cecbee0b35dd625c62156d8f6abd33d1bea8661bea6&xtrack=1&scene=0&subscene=131&clicktime=1552918479&ascene=7&devic"
             },
             {
               title: "W3C in 2018",
