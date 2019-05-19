@@ -82,6 +82,10 @@ class About extends React.Component<{}, IState> {
             {
               title: "如何搭建Electron开发环境",
               url: "https://segmentfault.com/a/1190000011008466"
+            },
+            {
+              title: "Electron 打包体积优化",
+              url: "https://imweb.io/topic/5b9f500cc2ec8e6772f34d79"
             }
           ]
         },
