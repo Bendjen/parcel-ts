@@ -84,6 +84,10 @@ class About extends React.Component<{}, IState> {
               url: "https://segmentfault.com/a/1190000011008466"
             },
             {
+              title: "Electron开发的gulp配置",
+              url: "https://segmentfault.com/a/1190000006186553"
+            },
+            {
               title: "Electron 打包体积优化",
               url: "https://imweb.io/topic/5b9f500cc2ec8e6772f34d79"
             }
