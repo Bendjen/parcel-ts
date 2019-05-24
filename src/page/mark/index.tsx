@@ -90,7 +90,16 @@ class About extends React.Component<{}, IState> {
             {
               title: "Electron 打包体积优化",
               url: "https://imweb.io/topic/5b9f500cc2ec8e6772f34d79"
-            }
+            },
+            {
+              title: "使用electron-builder配合electron-updater实现自动更新",
+              url: "https://segmentfault.com/a/1190000012904543"
+            },
+            {
+              title: "electron-vue架构解析-开发环境启动流程分析",
+              url: "https://blog.csdn.net/u010961631/article/details/80651349#%E6%B8%B2%E6%9F%93%E8%BF%9B%E7%A8%8B%E7%9A%84webpackrendererconfig%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"
+            },
+            
           ]
         },
         {
