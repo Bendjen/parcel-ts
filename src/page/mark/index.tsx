@@ -99,6 +99,10 @@ class About extends React.Component<{}, IState> {
               title: "electron-vue架构解析-开发环境启动流程分析",
               url: "https://blog.csdn.net/u010961631/article/details/80651349#%E6%B8%B2%E6%9F%93%E8%BF%9B%E7%A8%8B%E7%9A%84webpackrendererconfig%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"
             },
+            {
+              title: "用JS开发跨平台桌面应用，从原理到实践",
+              url: "https://mp.weixin.qq.com/s/4WaUM8iJoEYgrI_HpC5MOQ"
+            },
             
           ]
         },
