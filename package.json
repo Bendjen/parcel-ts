@@ -12,7 +12,7 @@
     "echarts": "^4.2.0-rc.2",
     "file-saver": "^2.0.0-rc.4",
     "flex.css": "^1.1.7",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "rc-queue-anim": "^1.6.6",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
